@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
 
 
 
-public class HelloController implements Initializable {
+public class Application_Controller implements Initializable {
 
 
 
@@ -246,8 +246,6 @@ public class HelloController implements Initializable {
 
     private GridPane matrixInput2x2;
 
-
-
     @FXML
 
     private GridPane matrixInput3x3;
@@ -332,7 +330,7 @@ public class HelloController implements Initializable {
 
         String plainText = plainTextInput.getText();
 
-        String encryptedText = HillCipher.encrypt(plainText, matrix);
+        String encryptedText = Hill_Cipher.encrypt(plainText, matrix);
 
         encryptedTextOutput.setText(encryptedText);
 
@@ -350,7 +348,7 @@ public class HelloController implements Initializable {
 
         String ciphertext = plainTextInput.getText();
 
-        String plaintext = HillCipher.decryption(ciphertext, matrix);
+        String plaintext = Hill_Cipher.decryption(ciphertext, matrix);
 
         encryptedTextOutput.setText(plaintext);
 
@@ -435,7 +433,7 @@ public class HelloController implements Initializable {
         encryptButton.setOnAction(e->{
             ArrayList<ArrayList<Integer>> matrix = getArrayListFromMatrix();
             String ciphertext = plainTextInput.getText();
-            String plaintext = HillCipher.decryption(ciphertext, matrix);
+            String plaintext = Hill_Cipher.decryption(ciphertext, matrix);
             encryptedTextOutput.setText(plaintext);
         });
     }
@@ -445,7 +443,7 @@ public class HelloController implements Initializable {
         DecryptBtn.setOnAction(e->{
             ArrayList<ArrayList<Integer>> matrix = getArrayListFromMatrix();
             String ciphertext = plainTextInput.getText();
-            String plaintext = HillCipher.decryption(ciphertext, matrix);
+            String plaintext = Hill_Cipher.decryption(ciphertext, matrix);
             encryptedTextOutput.setText(plaintext);
         });
     }
@@ -456,7 +454,7 @@ public class HelloController implements Initializable {
         encryptButton.setOnAction(e->{
             int[][] matrix = getMatrixFromInput();
             String plainText = plainTextInput.getText();
-            String encryptedText = HillCipher.encrypt(plainText, matrix);
+            String encryptedText = Hill_Cipher.encrypt(plainText, matrix);
             encryptedTextOutput.setText(encryptedText);
         });
 
